@@ -20,13 +20,27 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-light bg-info">
-			<div class="container-fluid" >
-			  <a class="navbar-brand" href="#">Catálogo</a>
+		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"><i class="bi bi-pc-display-horizontal"></i> Catálogo</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="estilosNavbar navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="#catalogo_"><i class="bi bi-tags"></i> Catálogo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="crud.html"><i class="bi bi-pencil-square"></i> CRUD</a>
+					</ul>
+				</div>
 			</div>
-		  </nav>
+		</nav>
 	</header>
-	<div class="container">
+	<div class="container" id="catalogo_">
 		<div class="row">
 			<div class="col">
 				<div class="card">
@@ -113,6 +127,28 @@
 			</div>
 		</div>
 	</div>
+
+	<footer>
+		<div class="footer-top bg-primary">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-lg-12 mx-auto ">
+						<br>
+						<h4><i class="bi bi-people"></i> Team:</h4>
+						<br>
+						<p><i class="bi bi-person-check"></i> Paula Andrea Taborda Montes</p>
+						<p><i class="bi bi-person-check"></i> Alex Orlando Muñoz</p>
+						<p><i class="bi bi-person-check"></i> Julián Pachón Castrillón</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bot">
+			<div class="container text-center">
+				<p>Programación con tecnologías web - 2021-2</p>
+			</div>
+		</div>
+	</footer>
 
 	<!-- Optional JavaScript; choose one of the two! -->
 
