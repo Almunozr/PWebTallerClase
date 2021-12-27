@@ -31,10 +31,11 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="estilosNavbar navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-tags"></i> Catálogo</a>
+							<a class="nav-link" aria-current="page" href="../index.html"><i class="bi bi-tags"></i> Catálogo</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="crud.html"><i class="bi bi-pencil-square"></i> CRUD</a>
+							<a class="nav-link" href="crud.php"><i class="bi bi-pencil-square"></i> CRUD</a>
+						</li>
 					</ul>
 				</div>
 			</div>
