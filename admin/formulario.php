@@ -1,3 +1,6 @@
+<!-- Hay que incluirlo para que la sesión funcione -->
+<?php require("../database.php");
+require("validarSesion.php"); ?>
 <!doctype html>
 <html lang="en">
 
@@ -11,32 +14,46 @@
 		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Para iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../style2.css">
+	<link rel="stylesheet" href="../style1.css">
     
 	<title>Formulario</title>
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="container-fluid">
-            <section class="navbar-brand" ><i class="bi bi-node-plus"></i> Nuevo Producto</section>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="estilosNavbar navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-tags"></i> Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin/index.php"><i class="bi bi-pencil-square"></i> CRUD</a>
-					</li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html"><i class="bi bi-pc-display-horizontal"></i> Catálogo</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="estilosNavbar navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="../index.html"><i class="bi bi-tags"></i> Catálogo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="crud.html"><i class="bi bi-pencil-square"></i> CRUD</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="registrarAdmin.php"><i class="bi bi-pencil-square"></i> Registrar nuevo administrador</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<?php echo $_SESSION['admin']['correo']; ?>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" href="cerrarSesion.php">Cerrar Sesión</a></li>
+							</ul>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+		</nav>
+	</header>
 
 <body>
 	<div class="container" id="formularioAgregar">

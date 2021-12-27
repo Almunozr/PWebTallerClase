@@ -58,7 +58,7 @@ require("validarSesion.php"); ?>
 	<div class="container">
 		<!-- Acá va la tabla con la info de los productos del catálogo -->
 		<!-- 1. Botón de agregar producto -->
-		<button type="button" class="btn btn-success" id="boton_agregar">Agregar producto</button>
+		<a href="formulario.php"><button type="button" class="btn btn-success" id="boton_agregar">Agregar producto</button></a>
 		<!-- 2. Tabla -->
 		<table class="table">
 			<thead>
