@@ -19,6 +19,7 @@ require("validarSesion.php"); ?>
 	<link rel="stylesheet" href="../style.css">
 	<link rel="stylesheet" href="../style2.css">
 	<link rel="stylesheet" href="../style1.css">
+    <link rel="stylesheet" href="estilosAdmin.css">
 </head>
 
 <body>
@@ -34,8 +35,8 @@ require("validarSesion.php"); ?>
 						<li class="nav-item">
 							<a class="nav-link" aria-current="page" href="../index.html"><i class="bi bi-tags"></i> Catálogo</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="crud.html"><i class="bi bi-pencil-square"></i> CRUD</a>
+                        <li class="nav-item">
+							<a class="nav-link" href="crud.php"><i class="bi bi-pencil-square"></i> CRUD</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="registrarAdmin.php"><i class="bi bi-pencil-square"></i> Registrar nuevo administrador</a>
@@ -56,44 +57,29 @@ require("validarSesion.php"); ?>
 		</nav>
 	</header>
 	<div class="container">
-		<!-- Acá va la tabla con la info de los productos del catálogo -->
-		<!-- 1. Botón de agregar producto -->
-		<button type="button" class="btn btn-success" id="boton_agregar">Agregar producto</button>
-		<!-- 2. Tabla -->
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">id_Producto</th>
-					<th scope="col">Nombre del producto</th>
-					<th scope="col">Precio del producto</th>
-					<th scope="col">Editar</th>
-					<th scope="col">Eliminar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">000</th>
-					<td>Nombre</td>
-					<td>$</td>
-					<td><a href=""><i class="bi bi-pencil-fill text-success"></i></a></td>
-					<td><a href=""><i class="bi bi-trash-fill text-danger"></i></a></td>
-				</tr>
-				<tr>
-					<th scope="row">001</th>
-					<td>Nombre</td>
-					<td>$</td>
-					<td><a href=""><i class="bi bi-pencil-fill text-success"></i></a></td>
-					<td><a href=""><i class="bi bi-trash-fill text-danger"></i></a></td>
-				</tr>
-				<tr>
-					<th scope="row">002</th>
-					<td>Nombre</td>
-					<td>$</td>
-					<td><a href=""><i class="bi bi-pencil-fill text-success"></i></a></td>
-					<td><a href=""><i class="bi bi-trash-fill text-danger"></i></a></td>
-				</tr>
-			</tbody>
-		</table>
+    <div class="card mx-auto" id="tarjetaLogin">
+            <div class="card-header">
+                <h4 class="text-center">Registrar administrador</h4>
+            </div>
+            <div class="card-body">
+                <form action="accionRegistrar.php" method="POST">
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" name="correo" id="correo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contra" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="contra" id="contra" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmarContra" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" name="confirmarContra" id="confirmarContra" required>
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Registrar">
+
+                </form>
+            </div>
+        </div>
 	</div>
 	<footer>
 		<div class="footer-top bg-primary">
