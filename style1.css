@@ -5,7 +5,7 @@
 .nav-item {
     color: white;
 }
-.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, .dropdown-toggle {
     color: white;
 }
 

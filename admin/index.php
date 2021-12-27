@@ -1,5 +1,5 @@
 <!-- Hay que incluirlo para que la sesión funcione -->
-<?php require("../database.php"); ?>
+<?php require("../database.php");?>
 <!doctype html>
 <html lang="es">
 
