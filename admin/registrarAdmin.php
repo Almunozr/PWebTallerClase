@@ -57,6 +57,30 @@ require("validarSesion.php"); ?>
         </nav>
     </header>
     <div class="container">
+
+        <?php
+        if (isset($_SESSION['fail'])) {
+        ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error</strong> | <?php echo $_SESSION['fail'];
+                                        unset($_SESSION['fail']); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php
+        }
+        ?>
+
+        <?php
+        if (isset($_SESSION['success'])) {
+        ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Registro exitoso</strong> | <?php echo $_SESSION['success'];
+                                        unset($_SESSION['success']); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php
+        }
+        ?>
         <div class="card mx-auto" id="tarjetaLogin">
             <div class="card-header">
                 <h4 class="text-center">Registrar administrador</h4>

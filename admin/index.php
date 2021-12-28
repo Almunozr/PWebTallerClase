@@ -1,5 +1,5 @@
 <!-- Hay que incluirlo para que la sesión funcione -->
-<?php require("../database.php");?>
+<?php require("../database.php"); ?>
 <!doctype html>
 <html lang="es">
 
@@ -23,14 +23,14 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><i class="bi bi-pc-display-horizontal"></i> Catálogo</a>
+                <a class="navbar-brand" href="../index.php"><i class="bi bi-pc-display-horizontal"></i> Catálogo</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="estilosNavbar navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="../index.html#catalogo_"><i class="bi bi-tags"></i> Catálogo</a>
+                            <a class="nav-link" aria-current="page" href="../index.php#catalogo_"><i class="bi bi-tags"></i> Catálogo</a>
                         </li>
                     </ul>
                 </div>
@@ -41,17 +41,18 @@
 
         <!-- Bloque para mostrar mensaje de error de credenciales en el login -->
         <?php
-            if(isset($_SESSION['fail'])){
+        if (isset($_SESSION['fail'])) {
         ?>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error</strong> <?php echo $_SESSION['fail']; unset($_SESSION['fail']);?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error</strong> <?php echo $_SESSION['fail'];
+                                        unset($_SESSION['fail']); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         <?php
-            }
+        }
         ?>
-        
-        
+
+
         <div class="card mx-auto" id="tarjetaLogin">
             <div class="card-header">
                 <h4 class="text-center">Login de administrador</h4>
