@@ -19,6 +19,10 @@ require("validarSesion.php"); ?>
 	<link rel="stylesheet" href="../style.css">
 	<link rel="stylesheet" href="../style2.css">
 	<link rel="stylesheet" href="../style1.css">
+
+	<!-- Estilos para la tabla con los registros -->
+	<link rel="stylesheet" href="estilosCRUD.css">
+
 </head>
 
 <body>
@@ -66,32 +70,31 @@ require("validarSesion.php"); ?>
 					<th scope="col">id_Producto</th>
 					<th scope="col">Nombre del producto</th>
 					<th scope="col">Precio del producto</th>
-					<th scope="col">Editar</th>
-					<th scope="col">Eliminar</th>
+					<th scope="col">Imagen</th>
+					<th scope="col">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">000</th>
-					<td>Nombre</td>
-					<td>$</td>
-					<td><a href=""><i class="bi bi-pencil-fill text-success"></i></a></td>
-					<td><a href=""><i class="bi bi-trash-fill text-danger"></i></a></td>
-				</tr>
-				<tr>
-					<th scope="row">001</th>
-					<td>Nombre</td>
-					<td>$</td>
-					<td><a href=""><i class="bi bi-pencil-fill text-success"></i></a></td>
-					<td><a href=""><i class="bi bi-trash-fill text-danger"></i></a></td>
-				</tr>
-				<tr>
-					<th scope="row">002</th>
-					<td>Nombre</td>
-					<td>$</td>
-					<td><a href=""><i class="bi bi-pencil-fill text-success"></i></a></td>
-					<td><a href=""><i class="bi bi-trash-fill text-danger"></i></a></td>
-				</tr>
+				<?php
+                $query = "SELECT * FROM producto";
+                $result = mysqli_query($_SESSION['connection'],$query); 
+                while($row = mysqli_fetch_array($result)){?>
+                    <tr>
+                        <td><?php echo $row['idProducto'] ?></td>
+                        <td><?php echo $row['nombre'] ?></td>
+                        <td><?php echo $row['precio'] ?></td>
+                        <td><img class="imagenes_crud" src="img/<?= $row['imagen'] ?>" alt=""/></td>
+
+                        <td>
+                            <a href="editar.php?id=<?php echo $row['idProducto']?>" class="btn btn-primary">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a href="eliminar.php?id=<?php echo $row['idProducto'] ?>" class="btn btn-danger">
+                                <i class="bi bi-trash-fill"></i>
+                            </a>
+                        </td>
+                    </tr>
+                <?php } ?>
 			</tbody>
 		</table>
 	</div>
