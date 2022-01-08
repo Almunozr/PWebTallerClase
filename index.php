@@ -1,3 +1,4 @@
+<?php require("database.php"); ?>
 <!doctype html>
 <html lang="en">
 
@@ -42,91 +43,39 @@
 		</nav>
 	</header>
 	<div class="container" id="catalogo_">
-		<div class="row">
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
+		<?php
+			$numeroColumnaActual = 1;
+			$consulta = "SELECT * FROM producto";
+			$consulta = mysqli_query($_SESSION['connection'], $consulta);
+			while($productoActual = mysqli_fetch_array($consulta)){
+				if($numeroColumnaActual == 1){
+					?>
+					<div class="row">
+				<?php
+				}
+				?>
+						<div class="col">
+							<div class="card">
+								<img class="imagenes_catalogo_" src="<?php echo "admin/img/".$productoActual['imagen']; ?>" class="card-img-top" alt="...">
+								<div class="card-body border-top">
+									<h5 class="card-title"><?php echo $productoActual['nombre']; ?></h5>
+									<p class="card-text">Precio: <?php echo $productoActual['precio']; ?></p>
+									<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
+								</div>
+							</div>
+						</div>
+				<?php
+				$numeroColumnaActual += 1;
+				if($numeroColumnaActual > 4){
+					// Vuelvo a la columna 1
+					$numeroColumnaActual = 1
+					?>
+					<!-- Cierro el div de row -->
 					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card">
-					<img src="img/pruebaIMG.jpg" class="card-img-top" alt="...">
-					<div class="card-body border-top">
-						<h5 class="card-title">Nombre Producto</h5>
-						<p class="card-text">Precio: $</p>
-						<a href="#" class="btn btn-success"><i class="bi bi-cart-plus-fill"></i> Agregar al carrito</a>
-					</div>
-				</div>
-			</div>
-		</div>
+				<?php
+				}
+			}
+		?>
 	</div>
 
 	<footer>
