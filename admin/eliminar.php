@@ -1,7 +1,7 @@
 <?php
 
 require("../database.php");
-require("validarSesion.php"); ?>
+require("validarSesion.php");
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
