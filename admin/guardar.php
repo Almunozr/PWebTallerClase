@@ -28,5 +28,5 @@ if(isset($_POST['save'])){
         $_SESSION['mensaje'] = "Producto guardado";
         $_SESSION['tipo_mensaje'] = "success";
     }
-    header("Location: formulario.php");
+    header("Location: crud.php");
 }
