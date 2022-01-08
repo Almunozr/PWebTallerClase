@@ -60,6 +60,12 @@ require("validarSesion.php"); ?>
 		</nav>
 	</header>
 	<div class="container">
+		<?php if(isset($_SESSION['mensaje'])) {?>
+                <div class="alert alert-<?= $_SESSION['tipo_mensaje'];?> alert-dismissible fade show" role="alert">
+                    <?php echo $_SESSION['mensaje'];?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+        <?php }?>
 		<!-- Acá va la tabla con la info de los productos del catálogo -->
 		<!-- 1. Botón de agregar producto -->
 		<a href="formulario.php"><button type="button" class="btn btn-success" id="boton_agregar">Agregar producto</button></a>
