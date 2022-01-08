@@ -58,27 +58,28 @@ require("validarSesion.php"); ?>
 	<div class="container" id="formularioAgregar">
 		<h2 class="text-center"><i class="bi bi-node-plus"></i> Llena todos los campos</h2>
 
-		<form class="row g-4" id="formularioOpiniones">
+
+		<form class="row g-4" id="formularioOpiniones" action="guardar.php" method="POST" enctype="multipart/form-data">
 			<div class="col-md-4">
 				<label for="validationCustom01" class="form-label">Identificador</label>
-				<input type="text" class="form-control" id="validationCustom01" placeholder="ingrese ID aquí" required>
+				<input type="text" class="form-control" id="validationCustom01" name="identificador" placeholder="Ingrese ID aquí" required>
 			</div>
 			<div class="col-md-8">
 				<label for="validationCustom02" class="form-label">Nombre del Producto</label>
-				<input type="text" class="form-control" id="validationCustom02" placeholder="Nombre" required>
+				<input type="text" class="form-control" id="validationCustom02" name="nombre" placeholder="Nombre" required>
 			</div>
 
 			<div class="col-md-4">
 				<label for="validationCustomUsername" class="form-label">Precio</label>
-				<input type="number" class="form-control" id="validationCustomUsername" placeholder="Su precio aquí" required>
+				<input type="number" class="form-control" id="validationCustomUsername" name="precio" placeholder="Su precio aquí" required>
 			</div>
 			<div class="col-md-8">
 				<label for="ArchivoIMG" class="form-label">Archivo de Imagen</label>
-				<input type="file" class="form-control" id="ArchivoIMG" required placeholder="img/mouse.png">
+				<input type="file" class="form-control" id="ArchivoIMG" name="imagen" required placeholder="img/mouse.png">
 			</div>
 
 			<div class="col-md-12" id="B_Agregar">
-				<button type="button" class="btn btn-success"><i class="bi bi-node-plus"></i> Agregar</button>
+				<input type="submit" class="btn btn-success" value="Agregar" name="save"><i class="bi bi-node-plus"></i>
 			</div>
 		</form>
 	</div>
