@@ -57,12 +57,6 @@ require("validarSesion.php"); ?>
 <body>
 	<div class="container" id="formularioAgregar">
 		<h2 class="text-center"><i class="bi bi-node-plus"></i> Llena todos los campos</h2>
-		<?php if(isset($_SESSION['mensaje'])) {?>
-                <div class="alert alert-<?= $_SESSION['tipo_mensaje'];?> alert-dismissible fade show" role="alert">
-                    <?php echo $_SESSION['mensaje'];?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-        <?php session_unset();}?>
 
 		<form class="row g-4" id="formularioOpiniones" action="guardar.php" method="POST" enctype="multipart/form-data">
 			<div class="col-md-4">
