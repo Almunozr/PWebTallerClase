@@ -30,7 +30,7 @@ if(isset($_POST['edit'])){
     $precio = $_POST['precio'];
     $imagen = $_POST['imagen'];
 
-    $query = "UPDATE producto SET idProducto=$id, nombre='$nom', precio=$precio, imagen=$imagen WHERE idProducto = $id";
+    $query = "UPDATE producto SET idProducto=$id, nombre='$nom', precio=$precio, imagen='$imagen' WHERE idProducto = $id";
     $result = mysqli_query($conn,$query);
     if (!$result) {
         $_SESSION['mensaje'] = "No se pudo editar";
