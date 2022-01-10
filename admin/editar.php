@@ -124,7 +124,7 @@ if(isset($_POST['edit'])){
 			</div>
 
 			<div class="col-md-12" id="B_Agregar">
-				<input type="submit" class="btn btn-success" value="Editar" name="editar"><!--<i class="bi bi-pencil-fill"></i> -->
+				<input type="submit" class="btn btn-success" value="Editar" name="edit"><!--<i class="bi bi-pencil-fill"></i> -->
 			</div>
 		</form>
 	</div>
