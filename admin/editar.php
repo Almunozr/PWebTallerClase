@@ -5,8 +5,8 @@ require("validarSesion.php"); ?>
 <?php
 
 
-if(isset($_GET['idProducto'])){
-    $id = $_GET['idProducto'];
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
     
     $query = "SELECT * FROM producto WHERE idProducto = $id";
     $result = mysqli_query($_SESSION['connection'],$query);
