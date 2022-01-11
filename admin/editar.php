@@ -28,9 +28,23 @@ if(isset($_POST['edit'])){
     $id = $_POST['identificador'];
     $nom = $_POST['nombre'];
     $precio = $_POST['precio'];
-    $imagen = $_POST['imagen'];
+    $imagen = $_FILES['imagen']['name'];
 
-    $query = "UPDATE producto SET idProducto=$id, nombre='$nom', precio=$precio, imagen='$imagen' WHERE idProducto = $id";
+	// Si hay una imagen, es decir, el usuario quiere cambiar la imagen del producto actual...
+	if (isset($imagen) && $imagen != "") {
+		// Subo la imagen
+        $tipo = $_FILES['imagen']['type'];
+        $tamano = $_FILES['imagen']['size'];
+        $temp = $_FILES['imagen']['tmp_name'];
+        move_uploaded_file($temp, 'img/'.$imagen);
+		// Actualizo la ruta de la imagen y los demás datos
+		$query = "UPDATE producto SET idProducto=$id, nombre='$nom', precio=$precio, imagen='$imagen' WHERE idProducto = $id";
+    }else{
+		// Hago el query sin hacer update a la imagen, es decir, queda la anterior
+		$query = "UPDATE producto SET nombre='$nom', precio=$precio WHERE idProducto = $id";
+	}
+
+    
     $result = mysqli_query($_SESSION['connection'],$query);
     if (!$result) {
         $_SESSION['mensaje'] = "No se pudo editar";
