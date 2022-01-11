@@ -134,7 +134,12 @@ if(isset($_POST['edit'])){
 			</div>
 			<div class="col-md-8">
 				<label for="ArchivoIMG" class="form-label">Archivo de Imagen</label>
-				<input type="file" class="form-control" id="ArchivoIMG" name="imagen" required value="<?php echo $imagen; ?>"placeholder="img/mouse.png">
+				<br>
+				<div class="alert alert-info" role="alert">
+					Esta es la imagen que actualmente tiene asignado tu producto, si deseas cambiarla selecciona una nueva acá debajo; de lo contrario, no selecciones nada.
+				</div>
+				<img id="imagenProductoEnEdit" src="<?php echo 'img/'.$imagen; ?>" width="20%">
+				<input type="file" class="form-control" id="ArchivoIMG" name="imagen">
 			</div>
 
 			<div class="col-md-12" id="B_Agregar">
