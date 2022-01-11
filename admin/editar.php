@@ -1,8 +1,8 @@
 <!-- Hay que incluirlo para que la sesión funcione -->
-<?php require("../database.php");
-require("validarSesion.php"); ?>
-
 <?php
+
+require("../database.php");
+require("validarSesion.php");
 
 
 if(isset($_GET['id'])){
@@ -31,7 +31,7 @@ if(isset($_POST['edit'])){
     $imagen = $_POST['imagen'];
 
     $query = "UPDATE producto SET idProducto=$id, nombre='$nom', precio=$precio, imagen='$imagen' WHERE idProducto = $id";
-    $result = mysqli_query($conn,$query);
+    $result = mysqli_query($_SESSION['connection'],$query);
     if (!$result) {
         $_SESSION['mensaje'] = "No se pudo editar";
         $_SESSION['tipo_mensaje'] = "danger";
@@ -104,7 +104,7 @@ if(isset($_POST['edit'])){
 	<div class="container" id="formularioAgregar">
 		<h2 class="text-center"><i class="bi bi-pencil-fill"></i> Edita los campos que desees</h2>
 
-		<form class="row g-4" id="formularioOpiniones" action="editar.php" method="POST" enctype="multipart/form-data">
+		<form class="row g-4" id="formularioOpiniones" action="editar.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
 			<div class="col-md-4">
 				<label for="validationCustom01" class="form-label">Identificador</label>
 				<input type="text" class="form-control" id="validationCustom01" name="identificador" value="<?php echo $id; ?>" placeholder="Ingrese ID aquí" required>
@@ -124,7 +124,7 @@ if(isset($_POST['edit'])){
 			</div>
 
 			<div class="col-md-12" id="B_Agregar">
-				<input type="submit" class="btn btn-success" value="Editar" name="editar"><!--<i class="bi bi-pencil-fill"></i> -->
+				<input type="submit" class="btn btn-success" value="Editar" name="edit"><!--<i class="bi bi-pencil-fill"></i> -->
 			</div>
 		</form>
 	</div>
