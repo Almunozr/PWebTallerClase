@@ -1,0 +1,26 @@
+*{
+    margin: 0%;
+}
+/* Cambio el color de  letra del navbar*/
+.nav-item {
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand, .dropdown-toggle {
+    color: white;
+}
+
+
+/* Organizo los estilos del footer */
+.footer-top{
+    color: white;
+}
+
+.footer-bot{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #335a33;
+    color: white;
+    height: 60px;
+    margin-top: -5%;
+}
