@@ -121,7 +121,7 @@ if(isset($_POST['edit'])){
 		<form class="row g-4" id="formularioOpiniones" action="editar.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
 			<div class="col-md-4">
 				<label for="validationCustom01" class="form-label">Identificador</label>
-				<input type="text" class="form-control" id="validationCustom01" name="identificador" value="<?php echo $id; ?>" placeholder="Ingrese ID aquí" required>
+				<input type="text" class="form-control" id="validationCustom01" name="identificador" value="<?php echo $id; ?>" placeholder="Ingrese ID aquí" required readonly>
 			</div>
 			<div class="col-md-8">
 				<label for="validationCustom02" class="form-label">Nombre del Producto</label>
